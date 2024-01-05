@@ -2,7 +2,7 @@
 
 use App\Models\Post;
 
-test('one can access post page', function () {
+test('post page can be accessed', function () {
     $post = Post::factory()->create();
 
     $this->get(route('posts.show', $post))

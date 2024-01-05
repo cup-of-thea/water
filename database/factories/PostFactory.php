@@ -20,6 +20,7 @@ class PostFactory extends Factory
             'title' => $this->faker->sentence,
             'slug' => $this->faker->slug,
             'content' => $this->faker->paragraphs(3, true),
+            'filePath' => $this->faker->filePath(),
         ];
     }
 }

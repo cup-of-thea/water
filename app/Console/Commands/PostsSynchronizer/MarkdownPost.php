@@ -6,7 +6,7 @@ use Symfony\Component\Yaml\Yaml;
 
 class MarkdownPost
 {
-    public static function parse(string $content): self
+    public static function parse(string $content, string $filePath): self
     {
         $meta = Yaml::parse(str($content)->after('---')->before('---')->trim()->toString());
         $content = str($content)->afterLast('---')->trim()->toString();
@@ -15,13 +15,15 @@ class MarkdownPost
             title: $meta['title'],
             slug: $meta['slug'],
             content: $content,
+            filePath: $filePath,
         );
     }
 
     private function __construct(
-        private string $title,
-        private string $slug,
-        private string $content,
+        public readonly string $title,
+        public readonly string $slug,
+        public readonly string $content,
+        public readonly string $filePath,
     ){}
 
     public function toPostAttributes(): array
@@ -30,6 +32,7 @@ class MarkdownPost
             'title' => $this->title,
             'slug' => $this->slug,
             'content' => $this->content,
+            'filePath' => $this->filePath,
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands\PostsSynchronizer;
 
+use App\Exceptions\SlugIsAlreadyTakenException;
 use App\Models\Post;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
@@ -30,16 +31,36 @@ class SynchronizeCommand extends Command
         $this->info('Post created successfully.');
 
         collect(Storage::allFiles('posts'))->each(function (string $path) {
-            $this->generate(Storage::get($path));
+            $this->generate(Storage::get($path), $path);
         });
 
         return Command::SUCCESS;
     }
 
-    public static function generate(string $content): void
+    /**
+     * @throws SlugIsAlreadyTakenException
+     */
+    public static function generate(string $content, string $path): void
     {
+        $post = MarkdownPost::parse($content, $path);
+        self::ensurePostNotDuplicated($post);
+        self::saveOrUpdate($post);
+    }
 
-        $post = MarkdownPost::parse($content);
+    public static function ensurePostNotDuplicated(MarkdownPost $post): void
+    {
+        if ($originalPost = Post::where('slug', $post->slug)->where('filePath', '!=', $post->filePath)->first()) {
+            throw new SlugIsAlreadyTakenException($post->slug, $originalPost->filePath, $post->filePath);
+        }
+    }
+
+    public static function saveOrUpdate(MarkdownPost $post): void
+    {
+        if ($originalPost = Post::where('filePath', $post->filePath)->first()) {
+            $originalPost->update($post->toPostAttributes());
+
+            return;
+        }
 
         Post::create($post->toPostAttributes());
     }
