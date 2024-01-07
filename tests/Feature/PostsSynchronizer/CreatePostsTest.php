@@ -36,6 +36,18 @@ it('creates post from md file', function () {
         ->and($post->filePath)->toBe('/posts/another-test.md');
 });
 
+it('gets slug from filename if not precised', function () {
+   expect(Post::count())->toBe(0);
+
+   $content = file_get_contents(__DIR__ . '/posts/test-without-slug.md');
+
+   SynchronizeCommand::generate($content, '/posts/test-without-slug.md');
+
+   expect(Post::count())->toBe(1);
+
+   expect(Post::first()->slug)->toBe('test-without-slug');
+});
+
 it('updates a post if same file path', function () {
     expect(Post::count())->toBe(0);
 

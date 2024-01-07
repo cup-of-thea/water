@@ -5,6 +5,7 @@ namespace App\Console\Commands\PostsSynchronizer;
 use App\Exceptions\SlugIsAlreadyTakenException;
 use App\Models\Post;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class SynchronizeCommand extends Command
@@ -29,6 +30,8 @@ class SynchronizeCommand extends Command
     public function handle()
     {
         $this->info('Post created successfully.');
+
+        DB::table('posts')->truncate();
 
         collect(Storage::allFiles('posts'))->each(function (string $path) {
             $this->generate(Storage::get($path), $path);

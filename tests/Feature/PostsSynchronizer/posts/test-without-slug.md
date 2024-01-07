@@ -1,0 +1,5 @@
+---
+title: "Excellent title"
+---
+
+Content

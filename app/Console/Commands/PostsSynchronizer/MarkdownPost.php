@@ -10,10 +10,15 @@ class MarkdownPost
     {
         $meta = Yaml::parse(str($content)->after('---')->before('---')->trim()->toString());
         $content = str($content)->afterLast('---')->trim()->toString();
+        $slug = $meta['slug'] ?? str($filePath)
+            ->afterLast('/')
+            ->trim()
+            ->replace(' ', '-')
+            ->before('.');
 
         return new self(
             title: $meta['title'],
-            slug: $meta['slug'],
+            slug: $slug,
             content: $content,
             filePath: $filePath,
         );
