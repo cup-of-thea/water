@@ -31,8 +31,6 @@ class SynchronizeCommand extends Command
     {
         $this->info('Post created successfully.');
 
-        DB::table('posts')->truncate();
-
         collect(Storage::allFiles('posts'))->each(function (string $path) {
             $this->generate(Storage::get($path), $path);
         });

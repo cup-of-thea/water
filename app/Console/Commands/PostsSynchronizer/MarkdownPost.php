@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands\PostsSynchronizer;
 
+use Carbon\Carbon;
 use Symfony\Component\Yaml\Yaml;
 
 class MarkdownPost
@@ -21,6 +22,7 @@ class MarkdownPost
             slug: $slug,
             content: $content,
             filePath: $filePath,
+            date: new Carbon($meta['date'])
         );
     }
 
@@ -29,6 +31,7 @@ class MarkdownPost
         public readonly string $slug,
         public readonly string $content,
         public readonly string $filePath,
+        public readonly Carbon $date,
     ){}
 
     public function toPostAttributes(): array
@@ -38,6 +41,7 @@ class MarkdownPost
             'slug' => $this->slug,
             'content' => $this->content,
             'filePath' => $this->filePath,
+            'date' => $this->date->locale('fr'),
         ];
     }
 }
