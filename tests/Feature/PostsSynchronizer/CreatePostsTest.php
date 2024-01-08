@@ -19,7 +19,7 @@ it('creates post from md file', function () {
 
     expect($post->title)->toBe('Hello 2024 !')
         ->and($post->slug)->toBe('hello-2024')
-        ->and($post->content)->toBe(str($content)->afterLast('---')->trim()->toString())
+        ->and($post->content)->toContain('<p>Content</p>')
         ->and($post->filePath)->toBe('/posts/test.md');
 
     $content = file_get_contents(__DIR__ . '/posts/another-test.md');
@@ -32,7 +32,7 @@ it('creates post from md file', function () {
 
     expect($post->title)->toBe('Another test')
         ->and($post->slug)->toBe('another-test')
-        ->and($post->content)->toBe(str($content)->afterLast('---')->trim()->toString())
+        ->and($post->content)->toContain('<p>Another content for another test</p>')
         ->and($post->filePath)->toBe('/posts/another-test.md');
 });
 
