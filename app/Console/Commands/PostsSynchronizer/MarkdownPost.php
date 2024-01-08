@@ -4,7 +4,6 @@ namespace App\Console\Commands\PostsSynchronizer;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Pipeline;
-use Spatie\LaravelMarkdown\MarkdownRenderer;
 use Symfony\Component\Yaml\Yaml;
 
 class MarkdownPost

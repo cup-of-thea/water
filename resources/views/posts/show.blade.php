@@ -15,7 +15,6 @@
             </header>
 
 
-
             <ul class="list-none p-0 flex justify-end space-x-4">
 
 
@@ -43,42 +42,6 @@
 
             </ul>
 
-
-            <p>Table des matières</p>
-            <ul>
-
-                <li>
-                    <a href="https://cupof.coffee/posts/reading-challenge-2024/#d-ou-vient-l-idee">D'où vient l'idée ?</a>
-
-                </li>
-
-                <li>
-                    <a href="https://cupof.coffee/posts/reading-challenge-2024/#la-liste">La liste</a>
-
-                    <ul>
-
-                        <li>
-                            <a href="https://cupof.coffee/posts/reading-challenge-2024/#bds-manga-et-romans-graphiques">BDs, manga et romans graphiques</a>
-                        </li>
-
-                        <li>
-                            <a href="https://cupof.coffee/posts/reading-challenge-2024/#romans-et-nouvelles">Romans et nouvelles</a>
-                        </li>
-
-                        <li>
-                            <a href="https://cupof.coffee/posts/reading-challenge-2024/#essais">Essais</a>
-                        </li>
-
-                        <li>
-                            <a href="https://cupof.coffee/posts/reading-challenge-2024/#netflix">Netflix</a>
-                        </li>
-
-                    </ul>
-
-                </li>
-
-            </ul>
-            <hr>
 
             {!! $post->content !!}
 

@@ -9,7 +9,7 @@ class ToHtml
     public function __invoke(string $content, \Closure $next)
     {
         $content = (new ParsedownExtra())
-            ->setBreaksEnabled(true)
+            ->setBreaksEnabled(false)
             ->setMarkupEscaped(false)
             ->text($content);
 
