@@ -1,0 +1,51 @@
+a {
+    @apply underline;
+}
+p {
+    @apply my-4 leading-relaxed;
+}
+.footnote-definition {
+    @apply flex justify-end text-right text-red-400 dark:text-blue-300;
+}
+.footnote-definition-label {
+    @apply static mt-8 w-8 block text-center;
+    &::after {
+        content: ")";
+    }
+    &::before {
+        content: "(";
+    }
+}
+.footnote-definition p {
+    @apply block ml-8;
+}
+h1 {
+    @apply text-left;
+}
+h1::before {
+    content: "# ";
+    @apply text-red-400
+    dark:text-blue-400
+    font-bold;
+}
+h2::before {
+    content: "# ";
+    @apply text-red-400
+    dark:text-blue-400
+    font-bold;
+}
+h3::before {
+    content: "# ";
+    @apply text-red-400
+    dark:text-blue-400
+    font-bold;
+}
+.prose h1 {
+    @apply border-b-4 border-red-400 dark:border-blue-400 pb-4;
+}
+.prose img {
+    @apply mx-auto;
+}
+.twitter-tweet {
+    @apply mx-auto;
+}
