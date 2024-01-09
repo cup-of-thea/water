@@ -8,10 +8,8 @@ use Symfony\Component\Yaml\Yaml;
 
 class MarkdownPost
 {
-    public static function parse(string $content, string $filePath): self
+    public static function parse(string $content, string $filePath, mixed $meta): self
     {
-        $meta = Yaml::parse(str($content)->after('---')->before('---')->trim()->toString());
-
         $content = Pipeline::send($content)
             ->through([
                 RemoveMeta::class,

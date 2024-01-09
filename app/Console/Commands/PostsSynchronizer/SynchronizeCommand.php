@@ -3,10 +3,12 @@
 namespace App\Console\Commands\PostsSynchronizer;
 
 use App\Exceptions\SlugIsAlreadyTakenException;
+use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Symfony\Component\Yaml\Yaml;
 
 class SynchronizeCommand extends Command
 {
@@ -43,9 +45,12 @@ class SynchronizeCommand extends Command
      */
     public static function generate(string $content, string $path): void
     {
-        $post = MarkdownPost::parse($content, $path);
+        // @todo: refactor this into pipeline
+        $meta = Yaml::parse(str($content)->after('---')->before('---')->trim()->toString());
+        $post = MarkdownPost::parse($content, $path, $meta);
         self::ensurePostNotDuplicated($post);
-        self::saveOrUpdate($post);
+        $savedPost = self::saveOrUpdate($post);
+        self::linkTaxonomies($meta, $savedPost);
     }
 
     public static function ensurePostNotDuplicated(MarkdownPost $post): void
@@ -55,14 +60,27 @@ class SynchronizeCommand extends Command
         }
     }
 
-    public static function saveOrUpdate(MarkdownPost $post): void
+    public static function saveOrUpdate(MarkdownPost $post): Post
     {
         if ($originalPost = Post::where('filePath', $post->filePath)->first()) {
             $originalPost->update($post->toPostAttributes());
 
-            return;
+            return $originalPost->refresh();
         }
 
-        Post::create($post->toPostAttributes());
+        return Post::create($post->toPostAttributes());
+    }
+
+
+    public static function linkTaxonomies(mixed $meta, Post $post)
+    {
+        if (isset($meta['category'])) {
+            $categorySlug = str($meta['category'])->slug();
+            $category =
+                Category::where('slug', $categorySlug)->first()
+                    ?: Category::create(['title' => $meta['category'], 'slug' => $categorySlug]);
+
+            $post->category()->associate($category)->save();
+        }
     }
 }
