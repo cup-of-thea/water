@@ -2,7 +2,7 @@
 title: "Mon reading challenge 2024 !"
 date: "2024-01-05"
 description: "Cette année, j'ai décidé de me lancer un reading challenge ! Voici d'où vient l'idée, et comment je compte m'y prendre !"
-categories: ["Perso"]
+category: "Perso"
 tags: ["Communauté", "2024"]
 ---
 

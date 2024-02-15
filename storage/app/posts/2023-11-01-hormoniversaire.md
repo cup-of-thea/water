@@ -2,7 +2,7 @@
 title: "1 an, joyeux hormoniversaire !"
 date: "2023-11-01"
 description: "Je viens de passer un cap de vie important pour moi, cela fait un an, jour pour jour, que j'ai commencé à prendre mes premières pressions d'œstrogènes."
-categories: ["Perso"]
+category: "Perso"
 tags: ["Transition", "THS"]
 series: ["Le cycle de THS"]
 episode: 4

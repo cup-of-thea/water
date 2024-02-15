@@ -17,7 +17,7 @@ class SynchronizeCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'posts-synchronizer:synchronize';
+    protected $signature = 'app:synchronize';
 
     /**
      * The console command description.

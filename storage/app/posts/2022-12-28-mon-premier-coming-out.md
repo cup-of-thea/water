@@ -1,7 +1,7 @@
 ---
 title: "Mon premier coming out"
 date: "2022-12-28"
-categories: ["Perso"]
+category: "Perso"
 tags: ["Transition"]
 ---
 

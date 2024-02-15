@@ -3,7 +3,7 @@ title: "Un peu plus sur moi"
 date: "2023-09-04"
 description: "Bon parce que si je ne veux pas parler de ma sexualité, je peux au moins parler de qui je suis, j'ai donc décidé de prendre des questions et d'y répondre."
 draft: true
-categories: ["Perso"]
+category: "Perso"
 tags: ["À propos"]
 ---
 

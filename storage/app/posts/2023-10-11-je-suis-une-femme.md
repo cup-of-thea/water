@@ -2,7 +2,7 @@
 title: "Je suis une femme"
 date: "2023-10-11"
 description: "Hier, nous étions le 10 octobre 2023, je suis partie de chez moi tôt le matin, parce que j'étais convoquée au tribunal judiciaire de Bobigny."
-categories: ["Perso"]
+category: "Perso"
 tags: ["Transition", "LGBTQIA+"]
 ---
 

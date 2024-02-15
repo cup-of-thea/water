@@ -2,7 +2,7 @@
 title: "Reconnaissance"
 date: "2023-10-13"
 description: "Je n'ai pas encore parlé d'une de mes activités qui devient importante, le stream et la création de contenus. C'est l'occasion de le faire, et de remercier les personnes qui m'ont aidée à me sentir légitime dans cette activité."
-categories: ["Le stream"]
+category: "Le stream"
 tags: ["Communauté"]
 series: ["Projecteur sur le stream ❤️"]
 episode: 1

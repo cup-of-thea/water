@@ -12,6 +12,8 @@ class Category extends Model
 
     protected $guarded = [];
 
+    protected $withCount = ['posts'];
+
     public function posts(): HasMany
     {
         return $this->hasMany(Post::class);

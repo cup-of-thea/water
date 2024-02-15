@@ -3,7 +3,7 @@ title: "Mon expérience pro en ligne"
 date: "2023-12-21"
 description: ""
 draft: true
-categories: ["Pro"]
+category: "Pro"
 tags: ["Télétravail", "Organisation", "Communauté"]
 series: ["Expériences"]
 episode: 2

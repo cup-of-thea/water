@@ -2,7 +2,7 @@
 title: "Comment je m'organise en télétravail"
 date: "2023-12-14"
 description: "Je suis en télétravail depuis juin 2023, et j'ai eu le temps de tester plusieurs organisations, et je pense avoir trouvé celle qui me convient le mieux, je t'en parle ?"
-categories: ["Pro"]
+category: "Pro"
 tags: ["Télétravail", "Organisation", "Communauté"]
 series: ["Expériences"]
 episode: 1

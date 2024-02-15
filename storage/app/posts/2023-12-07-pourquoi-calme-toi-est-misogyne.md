@@ -2,7 +2,7 @@
 title: "Pourquoi « Calme-toi » est misogyne"
 date: "2023-12-07"
 description: "Je vais te le dire tout net, je ne suis pas là pour te brosser dans le sens du poil, je suis là pour bousculer nos constructions et nos schémas mentaux."
-categories: ["Inclusion"]
+category: "Inclusion"
 tags: ["Féminisme"]
 ---
 

@@ -2,7 +2,7 @@
 title: "Bonne année 2024, quoi de prévu ?"
 date: "2024-01-01"
 description: ""
-categories: ["Le stream"]
+category: "Le stream"
 tags: ["Communauté"]
 series: ["Projecteur sur le stream ❤️"]
 episode: 2

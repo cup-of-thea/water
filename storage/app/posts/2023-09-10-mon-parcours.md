@@ -2,7 +2,7 @@
 title: "Mon parcours"
 date: "2023-09-10"
 description: "Avant de quitter le pire réseau que la Terre ait porté, j'y ai eu quelques demandes sur mon parcours professionnel. Et maintenant que j'ai quelques années d'expérience, je me dis qu'il est peut-être opportun de t'en parler."
-categories: ["Perso"]
+category: "Perso"
 tags: ["Tech", "Communauté", "Transition"]
 ---
 

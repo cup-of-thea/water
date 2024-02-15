@@ -2,7 +2,7 @@
 title: "D'égo et de blâme"
 date: "2023-09-08"
 description: "Donc il y a quelques temps, à une époque où mon genre social perçu était bien différent, je rencontrais des personnes qui m'ont inspirée une série d'articles sur le thème de l'hygiène intellectuelle dans la tech, dont ce premier épisode, qui parle d'égo et de blâme."
-categories: ["Pro"]
+category: "Pro"
 tags: ["Tech", "Communauté"]
 series: ["Hygiène et développement"]
 episode: 1

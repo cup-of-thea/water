@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::get(
     '/categories/',
     function () {
-        return view('categories.index');
+        return view('categories.index', ['categories' => Category::orderBy('title')->get()]);
     }
 )->name('categories.index');
 
@@ -32,6 +32,13 @@ Route::get(
         return view('categories.show', compact('category'));
     }
 )->name('categories.show');
+
+Route::get(
+    '/posts/',
+    function () {
+        return view('posts.index');
+    }
+)->name('posts.index');
 
 Route::get(
     '/posts/{post:slug}',

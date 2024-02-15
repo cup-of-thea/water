@@ -3,7 +3,7 @@ title: "Un autre équilibre"
 date: "2023-11-14"
 description: "Entre travail et stream, tout ça chez moi, est-ce que je tiens le coup ?"
 draft: true
-categories: ["Le stream"]
+category: "Le stream"
 tags: ["Communauté"]
 series: ["Projecteur sur le stream ❤️"]
 episode: 1

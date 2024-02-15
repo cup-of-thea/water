@@ -3,7 +3,7 @@ title: "Les remarques non sollicitées"
 date: "2023-09-21"
 description: ""
 draft: true
-categories: ["Perso"]
+category: "Perso"
 tags: ["Transition", "LGBTQIA+"]
 ---
 

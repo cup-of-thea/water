@@ -1,7 +1,7 @@
 ---
 title: "Mon avenir dans la tech : new horizon"
 date: "2023-04-25"
-categories: ["Pro", "Perso"]
+category: "Pro"
 tags: ["Tech"]
 ---
 
