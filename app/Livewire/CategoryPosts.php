@@ -28,6 +28,6 @@ class CategoryPosts extends Component
 
     public function render()
     {
-        return view('livewire.category-posts');
+        return view('livewire.taxonomy-posts');
     }
 }

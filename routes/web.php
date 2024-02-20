@@ -2,6 +2,9 @@
 
 use App\Models\Category;
 use App\Models\Post;
+use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\GetTagQuery;
+use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\IndexTagsQuery;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +35,22 @@ Route::get(
         return view('categories.show', compact('category'));
     }
 )->name('categories.show');
+
+Route::get(
+    '/tags/',
+    function () {
+        $tags = app(IndexTagsQuery::class)->index();
+        return view('tags.index', compact('tags'));
+    }
+)->name('tags.index');
+
+Route::get(
+    '/tags/{tag:slug}',
+    function (string $slug) {
+        $tag = app(GetTagQuery::class)->get($slug);
+        return view('tags.show', compact('tag'));
+    }
+)->name('tags.show');
 
 Route::get(
     '/posts/',
