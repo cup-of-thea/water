@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\DisplayPostController;
+use App\Http\Controllers\ListTagsController;
 use App\Models\Category;
-use App\Models\Post;
+use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\GetPostQuery;
 use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\GetTagQuery;
 use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\IndexTagsQuery;
-use Illuminate\Support\Facades\DB;
+use CupOfThea\MarkdownBlog\Domain\ValueObjects\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,13 +38,7 @@ Route::get(
     }
 )->name('categories.show');
 
-Route::get(
-    '/tags/',
-    function () {
-        $tags = app(IndexTagsQuery::class)->index();
-        return view('tags.index', compact('tags'));
-    }
-)->name('tags.index');
+Route::get('/tags/', ListTagsController::class)->name('tags.index');
 
 Route::get(
     '/tags/{tag:slug}',
@@ -52,16 +48,6 @@ Route::get(
     }
 )->name('tags.show');
 
-Route::get(
-    '/posts/',
-    function () {
-        return view('posts.index');
-    }
-)->name('posts.index');
+Route::get('/posts/', fn() => view('posts.index'))->name('posts.index');
 
-Route::get(
-    '/posts/{post:slug}',
-    function (Post $post) {
-        return view('posts.show', compact('post'));
-    }
-)->name('posts.show');
+Route::get('/posts/{slug}', DisplayPostController::class)->name('posts.show');
