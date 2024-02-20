@@ -1,11 +1,11 @@
 <?php
 
+use App\Http\Controllers\DisplayPostController;
 use App\Models\Category;
-use App\Models\Post;
 use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\GetPostQuery;
 use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\GetTagQuery;
 use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\IndexTagsQuery;
-use Illuminate\Support\Facades\DB;
+use CupOfThea\MarkdownBlog\Domain\ValueObjects\Post;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -60,10 +60,4 @@ Route::get(
     }
 )->name('posts.index');
 
-Route::get(
-    '/posts/{post:slug}',
-    function (string $slug) {
-        $post = app(GetPostQuery::class)->get($slug);
-        return view('posts.show', compact('post'));
-    }
-)->name('posts.show');
+Route::get('/posts/{slug}', DisplayPostController::class)->name('posts.show');
