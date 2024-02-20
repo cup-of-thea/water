@@ -15,6 +15,8 @@
             </header>
 
 
+            <livewire:post-taxonomies :post="$post" />
+
             <ul class="list-none p-0 flex justify-end space-x-4">
 
 

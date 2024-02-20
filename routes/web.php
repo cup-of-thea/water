@@ -2,6 +2,7 @@
 
 use App\Models\Category;
 use App\Models\Post;
+use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\GetPostQuery;
 use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\GetTagQuery;
 use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\IndexTagsQuery;
 use Illuminate\Support\Facades\DB;
@@ -61,7 +62,8 @@ Route::get(
 
 Route::get(
     '/posts/{post:slug}',
-    function (Post $post) {
+    function (string $slug) {
+        $post = app(GetPostQuery::class)->get($slug);
         return view('posts.show', compact('post'));
     }
 )->name('posts.show');
