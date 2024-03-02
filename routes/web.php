@@ -3,10 +3,10 @@
 use App\Http\Controllers\DisplayPostController;
 use App\Http\Controllers\ListTagsController;
 use App\Models\Category;
-use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\GetPostQuery;
-use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\GetTagQuery;
-use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\IndexTagsQuery;
-use CupOfThea\MarkdownBlog\Domain\ValueObjects\Post;
+use Thea\MarkdownBlog\Domain\UseCases\Queries\GetPostQuery;
+use Thea\MarkdownBlog\Domain\UseCases\Queries\GetTagQuery;
+use Thea\MarkdownBlog\Domain\UseCases\Queries\IndexTagsQuery;
+use Thea\MarkdownBlog\Domain\ValueObjects\Post;
 use Illuminate\Support\Facades\Route;
 
 /*

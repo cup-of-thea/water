@@ -2,11 +2,11 @@
 
 namespace App\Livewire;
 
-use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\GetCategoryFromPostQuery;
-use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\GetTagsFromPost;
-use CupOfThea\MarkdownBlog\Domain\ValueObjects\Category;
-use CupOfThea\MarkdownBlog\Domain\ValueObjects\Post;
-use CupOfThea\MarkdownBlog\Domain\ValueObjects\Tag;
+use Thea\MarkdownBlog\Domain\UseCases\Queries\GetCategoryFromPostQuery;
+use Thea\MarkdownBlog\Domain\UseCases\Queries\GetTagsFromPost;
+use Thea\MarkdownBlog\Domain\ValueObjects\Category;
+use Thea\MarkdownBlog\Domain\ValueObjects\Post;
+use Thea\MarkdownBlog\Domain\ValueObjects\Tag;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 use Livewire\Component;

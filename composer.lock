@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f593f3b1c1adcb39b2d8bf51d2521b3b",
+    "content-hash": "90db57e68360571dae4c849cdc0d10aa",
     "packages": [
         {
             "name": "brick/math",
@@ -129,54 +129,6 @@
                 }
             ],
             "time": "2023-12-11T17:09:12+00:00"
-        },
-        {
-            "name": "cup-of-thea/markdown-blog",
-            "version": "1.2.0",
-            "dist": {
-                "type": "path",
-                "url": "./packages/cup-of-thea/markdown-blog",
-                "reference": "17ba1309c1f018367fa18d6a90dafb1f137488fc"
-            },
-            "require": {
-                "erusev/parsedown": "^1.7",
-                "erusev/parsedown-extra": "^0.8.1",
-                "illuminate/console": "^10.44",
-                "illuminate/support": "^10.44",
-                "livewire/livewire": "^3.4",
-                "php": "^8.2",
-                "symfony/yaml": "^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^10"
-            },
-            "type": "laravel-package",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "CupOfThea\\MarkdownBlog\\MarkdownBlogServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "CupOfThea\\MarkdownBlog\\": "src/"
-                }
-            },
-            "license": [
-                "This work is licensed under CC BY-NC-SA 4.0"
-            ],
-            "authors": [
-                {
-                    "name": "Thea",
-                    "email": "thea.joy@outlook.com"
-                }
-            ],
-            "description": "Laravel package dedicated to manage a blog in markdown",
-            "transport-options": {
-                "symlink": true,
-                "relative": true
-            }
         },
         {
             "name": "dflydev/dot-access-data",
@@ -5968,6 +5920,62 @@
                 }
             ],
             "time": "2024-01-23T15:02:46+00:00"
+        },
+        {
+            "name": "thea/markdown-blog",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cup-of-thea/markdown-blog.git",
+                "reference": "cb5de62f7bb10de50bc699ddc606049bb6f2b2a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cup-of-thea/markdown-blog/zipball/cb5de62f7bb10de50bc699ddc606049bb6f2b2a1",
+                "reference": "cb5de62f7bb10de50bc699ddc606049bb6f2b2a1",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown": "^1.7",
+                "erusev/parsedown-extra": "^0.8.1",
+                "illuminate/console": "^10.44",
+                "illuminate/support": "^10.44",
+                "livewire/livewire": "^3.4",
+                "php": "^8.2",
+                "symfony/yaml": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^10"
+            },
+            "type": "laravel-package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "CupOfThea\\MarkdownBlog\\MarkdownBlogServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "CupOfThea\\MarkdownBlog\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "This work is licensed under CC BY-NC-SA 4.0"
+            ],
+            "authors": [
+                {
+                    "name": "Thea",
+                    "email": "thea.joy@outlook.com"
+                }
+            ],
+            "description": "Laravel package dedicated to manage a blog in markdown",
+            "support": {
+                "issues": "https://github.com/cup-of-thea/markdown-blog/issues",
+                "source": "https://github.com/cup-of-thea/markdown-blog/tree/1.2.0"
+            },
+            "time": "2024-02-20T21:32:45+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

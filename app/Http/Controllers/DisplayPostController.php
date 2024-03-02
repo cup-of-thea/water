@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\GetPostQuery;
+use Thea\MarkdownBlog\Domain\UseCases\Queries\GetPostQuery;
 use Illuminate\Contracts\View\View;
 
 readonly final class DisplayPostController

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use CupOfThea\MarkdownBlog\Domain\UseCases\Queries\IndexTagsQuery;
+use Thea\MarkdownBlog\Domain\UseCases\Queries\IndexTagsQuery;
 use Illuminate\Contracts\View\View;
 
 readonly class ListTagsController

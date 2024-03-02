@@ -2,7 +2,7 @@
 
 namespace App\Livewire;
 
-use CupOfThea\MarkdownBlog\Domain\ValueObjects\Tag;
+use Thea\MarkdownBlog\Domain\ValueObjects\Tag;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 use Livewire\Attributes\Computed;
